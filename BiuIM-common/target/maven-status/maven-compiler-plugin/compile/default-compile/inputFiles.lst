@@ -1,0 +1,11 @@
+/Applications/hins/projects/BiuIM/BiuIM-common/src/main/java/com/hins/protocol/request/LoginRequestPacket.java
+/Applications/hins/projects/BiuIM/BiuIM-common/src/main/java/com/hins/protocol/response/MessageResponsePacket.java
+/Applications/hins/projects/BiuIM/BiuIM-common/src/main/java/com/hins/serialize/impl/JSONSerializer.java
+/Applications/hins/projects/BiuIM/BiuIM-common/src/main/java/com/hins/protocol/command/Command.java
+/Applications/hins/projects/BiuIM/BiuIM-common/src/main/java/com/hins/protocol/PacketCodeC.java
+/Applications/hins/projects/BiuIM/BiuIM-common/src/main/java/com/hins/protocol/Packet.java
+/Applications/hins/projects/BiuIM/BiuIM-common/src/main/java/com/hins/serialize/Serializer.java
+/Applications/hins/projects/BiuIM/BiuIM-common/src/main/java/com/hins/serialize/SerializerAlgorithm.java
+/Applications/hins/projects/BiuIM/BiuIM-common/src/main/java/com/hins/protocol/response/LoginResponsePacket.java
+/Applications/hins/projects/BiuIM/BiuIM-common/src/main/java/com/hins/protocol/request/MessageRequestPacket.java
+/Applications/hins/projects/BiuIM/BiuIM-common/src/main/java/com/hins/App.java

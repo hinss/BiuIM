@@ -1,0 +1,11 @@
+com/hins/protocol/request/MessageRequestPacket.class
+com/hins/serialize/impl/JSONSerializer.class
+com/hins/protocol/response/MessageResponsePacket.class
+com/hins/serialize/Serializer.class
+com/hins/protocol/PacketCodeC.class
+com/hins/protocol/Packet.class
+com/hins/protocol/command/Command.class
+com/hins/protocol/request/LoginRequestPacket.class
+com/hins/App.class
+com/hins/protocol/response/LoginResponsePacket.class
+com/hins/serialize/SerializerAlgorithm.class

@@ -18,14 +18,16 @@
     <modules>
       <module>BiuIM-Server</module>
       <module>BiuIM-Client</module>
+      <module>BiuIM-common</module>
     </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
-    <netty.version>4.1.6.Final</netty.version>
+    <netty.version>4.1.36.Final</netty.version>
     <fastjson.version>1.2.47</fastjson.version>
+    <lombok.version>1.16.12</lombok.version>
   </properties>
 
  <dependencyManagement>
@@ -44,6 +46,14 @@
       <artifactId>fastjson</artifactId>
       <version>${fastjson.version}</version>
     </dependency>
+
+    <!-- lombok-->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+    </dependency>
+
   </dependencies>
  </dependencyManagement>
 

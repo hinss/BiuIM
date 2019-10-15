@@ -6,9 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="BiuIM-common" />
         <module name="BiuIMClient" />
         <module name="BiuIMServer" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="BiuIMcommon" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
