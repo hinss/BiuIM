@@ -47,13 +47,13 @@ public class PacketCodeC {
 
     /**
      * 按照[协议]编码数据包过程
-     * @param byteBufAllocator
+     * @param byteBuf
      * @param packet
      * @return
      */
-    public ByteBuf encode(ByteBufAllocator byteBufAllocator, Packet packet) {
+    public ByteBuf encode(ByteBuf byteBuf, Packet packet) {
         // 1. 创建 ByteBuf 对象
-        ByteBuf byteBuf = byteBufAllocator.ioBuffer();
+//        ByteBuf byteBuf = byteBufAllocator.ioBuffer();
         // 2. 序列化 java 对象
         byte[] bytes = Serializer.DEFAULT.serialize(packet);
 

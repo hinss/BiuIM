@@ -47,7 +47,7 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
             }
 
             //返回登录响应
-            ByteBuf buf = PacketCodeC.INSTANCE.encode(ctx.alloc(), loginResponsePacket);
+            ByteBuf buf = PacketCodeC.INSTANCE.encode(ctx.alloc().ioBuffer(), loginResponsePacket);
             ctx.writeAndFlush(buf);
 
         }else if(packet instanceof MessageRequestPacket){
@@ -59,7 +59,7 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
             MessageResponsePacket messageResponsePacket = new MessageResponsePacket();
             System.out.println(new Date() + ": 收到客户端消息: " + messageRequestPacket.getMessage());
             messageResponsePacket.setMessage("服务端回复【" + messageRequestPacket.getMessage() + "】");
-            ByteBuf responseByteBuf = PacketCodeC.INSTANCE.encode(ctx.alloc(), messageResponsePacket);
+            ByteBuf responseByteBuf = PacketCodeC.INSTANCE.encode(ctx.alloc().ioBuffer(), messageResponsePacket);
             ctx.channel().writeAndFlush(responseByteBuf);
         }
     }

@@ -1,5 +1,9 @@
 package com.hins.client;
 
+import com.hins.client.handler.LoginResponseHandler;
+import com.hins.client.handler.MessageResponseHandler;
+import com.hins.codec.PacketDecoder;
+import com.hins.codec.PacketEncoder;
 import com.hins.protocol.PacketCodeC;
 import com.hins.protocol.request.MessageRequestPacket;
 import com.hins.util.LoginUtil;
@@ -46,7 +50,10 @@ public class NettyClient {
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     public void initChannel(SocketChannel ch) {
-                        ch.pipeline().addLast(new ClientHandler());
+                        ch.pipeline().addLast(new PacketDecoder());
+                        ch.pipeline().addLast(new LoginResponseHandler());
+                        ch.pipeline().addLast(new MessageResponseHandler());
+                        ch.pipeline().addLast(new PacketEncoder());
                     }
                 });
 
@@ -83,7 +90,7 @@ public class NettyClient {
 
                     MessageRequestPacket packet = new MessageRequestPacket();
                     packet.setMessage(line);
-                    ByteBuf byteBuf = PacketCodeC.INSTANCE.encode(channel.alloc(), packet);
+                    ByteBuf byteBuf = PacketCodeC.INSTANCE.encode(channel.alloc().ioBuffer(), packet);
                     channel.writeAndFlush(byteBuf);
                 }
             }

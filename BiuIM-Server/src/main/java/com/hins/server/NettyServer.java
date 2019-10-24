@@ -1,5 +1,9 @@
 package com.hins.server;
 
+import com.hins.codec.PacketDecoder;
+import com.hins.codec.PacketEncoder;
+import com.hins.server.handler.LoginRequestHandler;
+import com.hins.server.handler.MessageRequestHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -42,8 +46,11 @@ public class NettyServer {
 
                     @Override
                     protected void initChannel(NioSocketChannel ch) throws Exception {
-                        //具体处理每条连接的逻辑
-                        ch.pipeline().addLast(new ServerHandler());
+                     //具体处理每条连接的逻辑
+                     ch.pipeline().addLast(new PacketDecoder());
+                     ch.pipeline().addLast(new LoginRequestHandler());
+                     ch.pipeline().addLast(new MessageRequestHandler());
+                     ch.pipeline().addLast(new PacketEncoder());
 
                     }
                 });

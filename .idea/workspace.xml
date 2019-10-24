@@ -2,27 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b06bdbc3-6473-4459-930a-6484d58ba32f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/attribute/Attributes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/NettyClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/util/LoginUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/NettyServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/ServerHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BiuIM-common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/protocol/Packet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/protocol/PacketCodeC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/protocol/command/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/protocol/request/LoginRequestPacket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/protocol/request/MessageRequestPacket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/protocol/response/LoginResponsePacket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/protocol/response/MessageResponsePacket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/serialize/Serializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/serialize/SerializerAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/serialize/impl/JSONSerializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/handler/LoginResponseHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/handler/MessageResponseHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/handler/LoginRequestHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/handler/MessageRequestHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/codec/PacketDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/codec/PacketEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BiuIM-Client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BiuIM-Client/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/NettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/NettyClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BiuIM-Server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BiuIM-Server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/NettyServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/NettyServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/ServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/ServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BiuIM-Server/src/test/java/com/hins/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BiuIM-Server/src/test/java/com/hins/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/protocol/PacketCodeC.java" beforeDir="false" afterPath="$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/protocol/PacketCodeC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BiuIM-common/target/classes/com/hins/App.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,99 +34,54 @@
     <session id="1831806675">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.22" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="class" value="1" />
-          <entry key="java" value="1570" />
+          <entry key="java" value="1842" />
           <entry key="txt" value="48" />
-          <entry key="xml" value="232" />
+          <entry key="xml" value="237" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="1570" />
+          <entry key="JAVA" value="1842" />
           <entry key="PLAIN_TEXT" value="48" />
-          <entry key="XML" value="232" />
+          <entry key="XML" value="237" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="1" />
+          <entry key="class" value="5" />
           <entry key="iml" value="1" />
-          <entry key="java" value="39" />
-          <entry key="xml" value="20" />
+          <entry key="java" value="58" />
+          <entry key="xml" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="1" />
+          <entry key="CLASS" value="5" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="39" />
-          <entry key="XML" value="20" />
+          <entry key="JAVA" value="58" />
+          <entry key="XML" value="22" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BiuIM-Server/pom.xml">
+        <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/NettyServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BiuIM-Client/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="49" column="32" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BiuIM-common/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/protocol/Packet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/NettyClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
+            <state relative-caret-position="184">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -140,10 +90,101 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/protocol/PacketCodeC.java">
+        <entry file="file://$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/NettyClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-904">
-              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            <state relative-caret-position="346">
+              <caret line="67" column="34" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1377#1620#0" expanded="true" />
+                <element signature="e#1619#1620#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/codec/PacketDecoder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/handler/LoginResponseHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/codec/PacketEncoder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/ClientHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="431">
+              <caret line="32" column="75" selection-start-line="32" selection-start-column="75" selection-end-line="32" selection-end-column="75" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/handler/MessageResponseHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/handler/LoginRequestHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1242#1243#0" expanded="true" />
+                <element signature="e#1269#1270#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/handler/MessageRequestHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -173,7 +214,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/NettyServer.java" />
         <option value="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/FirstServerHandler.java" />
         <option value="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/attribute/Attributes.java" />
         <option value="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/command/Command.java" />
@@ -188,14 +228,24 @@
         <option value="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/serialize/SerializerAlgorithm.java" />
         <option value="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/serialize/impl/JSONSerializer.java" />
         <option value="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/protocol/PacketCodeC.java" />
-        <option value="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/ServerHandler.java" />
         <option value="$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/attribute/Attributes.java" />
         <option value="$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/util/LoginUtil.java" />
-        <option value="$PROJECT_DIR$/BiuIM-Server/pom.xml" />
-        <option value="$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/NettyClient.java" />
-        <option value="$PROJECT_DIR$/BiuIM-Client/pom.xml" />
         <option value="$PROJECT_DIR$/BiuIM-common/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/BiuIM-Client/pom.xml" />
+        <option value="$PROJECT_DIR$/BiuIM-Server/pom.xml" />
+        <option value="$PROJECT_DIR$/BiuIM-Server/src/test/java/com/hins/AppTest.java" />
+        <option value="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/handler/LoginRequestHandler.java" />
+        <option value="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/handler/MessageRequestHandler.java" />
+        <option value="$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/codec/PacketDecoder.java" />
+        <option value="$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/codec/PacketEncoder.java" />
+        <option value="$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/protocol/PacketCodeC.java" />
+        <option value="$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/handler/LoginResponseHandler.java" />
+        <option value="$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/handler/MessageResponseHandler.java" />
+        <option value="$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/NettyClient.java" />
+        <option value="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/NettyServer.java" />
+        <option value="$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/ServerHandler.java" />
+        <option value="$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/ClientHandler.java" />
       </list>
     </option>
   </component>
@@ -253,10 +303,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="792" />
+    <option name="height" value="798" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -276,8 +326,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -338,7 +386,8 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="hins" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="handler" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BiuIM" type="b2602c69:ProjectViewProjectNode" />
@@ -374,6 +423,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="hins" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BiuIM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BiuIM" type="462c0819:PsiDirectoryNode" />
+              <item name="BiuIM-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hins" type="462c0819:PsiDirectoryNode" />
+              <item name="codec" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BiuIM" type="b2602c69:ProjectViewProjectNode" />
@@ -430,16 +489,53 @@
               <item name="hins" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="BiuIM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BiuIM" type="462c0819:PsiDirectoryNode" />
+              <item name="BiuIM-Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hins" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="handler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BiuIM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BiuIM" type="462c0819:PsiDirectoryNode" />
+              <item name="BiuIM-Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BiuIM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BiuIM" type="462c0819:PsiDirectoryNode" />
+              <item name="BiuIM-Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BiuIM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BiuIM" type="462c0819:PsiDirectoryNode" />
+              <item name="BiuIM-Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hins" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571122473849" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571908851112" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -465,6 +561,44 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Application.NettyClient">
+    <configuration name="NettyClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hins.client.NettyClient" />
+      <module name="BiuIMClient" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hins.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NettyServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.hins.server.NettyServer" />
+      <module name="BiuIMServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hins.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.NettyServer" />
+      <item itemvalue="Application.NettyClient" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.NettyClient" />
+        <item itemvalue="Application.NettyServer" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -477,7 +611,9 @@
       <updated>1570633548120</updated>
       <workItem from="1570633570397" duration="2225000" />
       <workItem from="1570756310590" duration="2331000" />
-      <workItem from="1571106891694" duration="11264000" />
+      <workItem from="1571106891694" duration="11775000" />
+      <workItem from="1571128187246" duration="2205000" />
+      <workItem from="1571794923788" duration="5207000" />
     </task>
     <task id="LOCAL-00001" summary="add:first time upload BiuIM projects structure!">
       <created>1570636132265</created>
@@ -490,13 +626,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15820000" />
+    <option name="totallyTimeSpent" value="23743000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="792" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30829757" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30758226" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="JRebel" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -504,28 +639,28 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Designer" order="7" />
-      <window_info anchor="bottom" id="Thumbnails" />
-      <window_info anchor="bottom" id="JRebel Executor" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38857144" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.32048193" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.51325303" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.30963856" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.23714286" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.39156628" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="JRebel Console" order="13" side_tool="true" />
+      <window_info anchor="bottom" id="JRebel Console" order="13" sideWeight="0.5007153" side_tool="true" weight="0.32048193" />
+      <window_info anchor="bottom" id="Thumbnails" order="14" />
+      <window_info anchor="bottom" id="JRebel Executor" order="15" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.30472103" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.30472103" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -540,6 +675,60 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add:first time upload BiuIM projects structure!" />
     <option name="LAST_COMMIT_MESSAGE" value="add:first time upload BiuIM projects structure!" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/ClientHandler.java</url>
+          <line>23</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/codec/PacketDecoder.java</url>
+          <line>21</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/handler/LoginRequestHandler.java</url>
+          <line>20</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/handler/MessageRequestHandler.java</url>
+          <line>19</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/codec/PacketEncoder.java</url>
+          <line>19</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/handler/LoginResponseHandler.java</url>
+          <line>21</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/handler/LoginResponseHandler.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/handler/MessageResponseHandler.java</url>
+          <line>19</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/BiuIM.iml" />
@@ -557,25 +746,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/NettyServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1159#1425#0" expanded="true" />
-            <element signature="e#1424#1425#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/attribute/Attributes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/attribute/Attributes.java" />
     <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.5.4/repository/anialy-repo/com/alibaba/fastjson/1.2.47/fastjson-1.2.47.jar!/com/alibaba/fastjson/annotation/JSONField.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -583,13 +754,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/protocol/command/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/protocol/command/Command.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/lang/Package.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -597,112 +762,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/protocol/Packet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/protocol/response/LoginResponsePacket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#254#255#0" expanded="true" />
-            <element signature="e#281#282#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/protocol/request/LoginRequestPacket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#249#250#0" expanded="true" />
-            <element signature="e#276#277#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/protocol/request/MessageRequestPacket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#262#263#0" expanded="true" />
-            <element signature="e#289#290#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/protocol/response/MessageResponsePacket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#298#299#0" expanded="true" />
-            <element signature="e#328#329#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/serialize/SerializerAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/serialize/impl/JSONSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#241#242#0" expanded="true" />
-            <element signature="e#265#266#0" expanded="true" />
-            <element signature="e#394#395#0" expanded="true" />
-            <element signature="e#442#443#0" expanded="true" />
-            <element signature="e#435#436#0" expanded="true" />
-            <element signature="e#462#463#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/serialize/Serializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/protocol/PacketCodeC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="55" column="54" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/protocol/Packet.java" />
+    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/protocol/response/LoginResponsePacket.java" />
+    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/protocol/request/LoginRequestPacket.java" />
+    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/protocol/request/MessageRequestPacket.java" />
+    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/protocol/response/MessageResponsePacket.java" />
+    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/serialize/SerializerAlgorithm.java" />
+    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/serialize/impl/JSONSerializer.java" />
+    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/serialize/Serializer.java" />
+    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/protocol/PacketCodeC.java" />
     <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.5.4/repository/anialy-repo/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/util/AttributeKey.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="53" column="38" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
-          <folding>
-            <element signature="e#2140#2141#0" expanded="true" />
-            <element signature="e#2203#2204#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -747,31 +819,11 @@
     <entry file="file://$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/serialize/Serializer.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/protocol/request/LoginRequestPacket.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/protocol/request/MessageRequestPacket.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/serialize/SerializerAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/ServerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="48" column="18" lean-forward="true" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BiuIM-Server/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/protocol/Packet.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -787,34 +839,177 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/NettyClient.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
+        <state relative-caret-position="50">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/test/java/com/hins/AppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BiuIM-Server/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13">
+          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BiuIM-Client/src/test/java/com/hins/AppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="6" selection-start-line="2" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BiuIM-Client/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="47" selection-start-line="47" selection-end-line="52" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/protocol/request/LoginRequestPacket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/protocol/PacketCodeC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-144">
+          <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/ServerHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="61" column="88" selection-start-line="61" selection-start-column="88" selection-end-line="61" selection-end-column="88" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/protocol/PacketCodeC.java">
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.5.4/repository/anialy-repo/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final.jar!/io/netty/channel/SimpleChannelInboundHandler.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-904">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        <state relative-caret-position="114">
+          <caret line="10" column="67" selection-start-line="10" selection-start-column="67" selection-end-line="10" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BiuIM-Client/pom.xml">
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.5.4/repository/anialy-repo/io/netty/netty-all/4.1.36.Final/netty-all-4.1.36.Final.jar!/io/netty/channel/ChannelInboundHandlerAdapter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="49" column="32" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="32" />
+        <state relative-caret-position="114">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/NettyServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+        <state relative-caret-position="184">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/ClientHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="32" column="75" selection-start-line="32" selection-start-column="75" selection-end-line="32" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.5.4/repository/anialy-repo/io/netty/netty-all/4.1.6.Final/netty-all-4.1.6.Final-sources.jar!/io/netty/handler/codec/ByteToMessageDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="69" column="22" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/handler/LoginRequestHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1242#1243#0" expanded="true" />
+            <element signature="e#1269#1270#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/handler/LoginResponseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/NettyClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="67" column="34" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1377#1620#0" expanded="true" />
+            <element signature="e#1619#1620#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BiuIM-Server/src/main/java/com/hins/server/handler/MessageRequestHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/codec/PacketEncoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BiuIM-common/src/main/java/com/hins/codec/PacketDecoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BiuIM-Client/src/main/java/com/hins/client/handler/MessageResponseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

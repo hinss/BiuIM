@@ -30,7 +30,7 @@ public class ClientHandler extends ChannelInboundHandlerAdapter {
         loginRequestPacket.setPassword("pwd");
 
         // 编码
-        ByteBuf buffer = PacketCodeC.INSTANCE.encode(ctx.alloc(), loginRequestPacket);
+        ByteBuf buffer = PacketCodeC.INSTANCE.encode(ctx.alloc().ioBuffer(), loginRequestPacket);
 
         // 写数据
         ctx.channel().writeAndFlush(buffer);
