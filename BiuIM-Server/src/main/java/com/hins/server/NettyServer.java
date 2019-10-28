@@ -49,12 +49,13 @@ public class NettyServer {
                     @Override
                     protected void initChannel(NioSocketChannel ch) throws Exception {
                      //具体处理每条连接的逻辑
-//                     ch.pipeline().addLast(new Spliter());
-//                     ch.pipeline().addLast(new PacketDecoder());
-//                     ch.pipeline().addLast(new LoginRequestHandler());
-//                     ch.pipeline().addLast(new MessageRequestHandler());
-//                     ch.pipeline().addLast(new PacketEncoder());
-                        ch.pipeline().addLast(new FirstServerHandler());
+                     ch.pipeline().addLast(new Spliter());
+                     ch.pipeline().addLast(new PacketDecoder());
+                     ch.pipeline().addLast(new LoginRequestHandler());
+                     ch.pipeline().addLast(new MessageRequestHandler());
+                     ch.pipeline().addLast(new PacketEncoder());
+                     //模拟粘包的handler
+//                   ch.pipeline().addLast(new FirstServerHandler());
 
                     }
                 });
