@@ -1,9 +1,11 @@
 package com.hins.client;
 
+import com.hins.client.handler.FirstClientHandler;
 import com.hins.client.handler.LoginResponseHandler;
 import com.hins.client.handler.MessageResponseHandler;
 import com.hins.codec.PacketDecoder;
 import com.hins.codec.PacketEncoder;
+import com.hins.codec.Spliter;
 import com.hins.protocol.PacketCodeC;
 import com.hins.protocol.request.MessageRequestPacket;
 import com.hins.util.LoginUtil;
@@ -22,7 +24,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Description:
+ * @Description: 基于Netty实现的客户端
  * @Author:Wyman
  * @Date:2019
  */
@@ -50,10 +52,12 @@ public class NettyClient {
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     public void initChannel(SocketChannel ch) {
-                        ch.pipeline().addLast(new PacketDecoder());
-                        ch.pipeline().addLast(new LoginResponseHandler());
-                        ch.pipeline().addLast(new MessageResponseHandler());
-                        ch.pipeline().addLast(new PacketEncoder());
+//                        ch.pipeline().addLast(new Spliter());
+//                        ch.pipeline().addLast(new PacketDecoder());
+//                        ch.pipeline().addLast(new LoginResponseHandler());
+//                        ch.pipeline().addLast(new MessageResponseHandler());
+//                        ch.pipeline().addLast(new PacketEncoder());
+                        ch.pipeline().addLast(new FirstClientHandler());
                     }
                 });
 
@@ -64,8 +68,8 @@ public class NettyClient {
         bootstrap.connect(host, port).addListener(future -> {
             if (future.isSuccess()) {
                 System.out.println(new Date() + ": 连接成功，启动控制台线程……");
-                Channel channel = ((ChannelFuture) future).channel();
-                startConsoleThread(channel);
+//                Channel channel = ((ChannelFuture) future).channel();
+//                startConsoleThread(channel);
             } else if (retry == 0) {
                 System.err.println("重试次数已用完，放弃连接！");
             } else {
@@ -84,14 +88,20 @@ public class NettyClient {
         new Thread(() -> {
             while (!Thread.interrupted()) {
                 if (LoginUtil.hasLogin(channel)) {
-                    System.out.println("输入消息发送至服务端: ");
+                    System.out.println("循环发送1000条消息至服务端: ");
                     Scanner sc = new Scanner(System.in);
                     String line = sc.nextLine();
 
-                    MessageRequestPacket packet = new MessageRequestPacket();
-                    packet.setMessage(line);
-                    ByteBuf byteBuf = PacketCodeC.INSTANCE.encode(channel.alloc().ioBuffer(), packet);
-                    channel.writeAndFlush(byteBuf);
+                    for(int i = 0; i < 1000; i++){
+                        MessageRequestPacket packet = new MessageRequestPacket();
+                        packet.setMessage(new Date() + "Hinss现在正在发送数据啦...利物浦是冠军");
+                        ByteBuf byteBuf = PacketCodeC.INSTANCE.encode(channel.alloc().ioBuffer(), packet);
+                        channel.writeAndFlush(byteBuf);
+                    }
+
+
+//                    packet.setMessage(line);
+
                 }
             }
         }).start();
