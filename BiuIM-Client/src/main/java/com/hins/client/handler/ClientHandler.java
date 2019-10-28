@@ -1,4 +1,4 @@
-package com.hins.client;
+package com.hins.client.handler;
 
 import com.hins.protocol.Packet;
 import com.hins.protocol.PacketCodeC;

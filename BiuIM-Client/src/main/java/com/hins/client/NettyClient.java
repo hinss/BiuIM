@@ -7,8 +7,10 @@ import com.hins.codec.PacketDecoder;
 import com.hins.codec.PacketEncoder;
 import com.hins.codec.Spliter;
 import com.hins.protocol.PacketCodeC;
+import com.hins.protocol.request.LoginRequestPacket;
 import com.hins.protocol.request.MessageRequestPacket;
 import com.hins.util.LoginUtil;
+import com.hins.utils.SessionUtils;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
@@ -52,12 +54,13 @@ public class NettyClient {
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     public void initChannel(SocketChannel ch) {
-//                        ch.pipeline().addLast(new Spliter());
-//                        ch.pipeline().addLast(new PacketDecoder());
-//                        ch.pipeline().addLast(new LoginResponseHandler());
-//                        ch.pipeline().addLast(new MessageResponseHandler());
-//                        ch.pipeline().addLast(new PacketEncoder());
-                        ch.pipeline().addLast(new FirstClientHandler());
+                        ch.pipeline().addLast(new Spliter());
+                        ch.pipeline().addLast(new PacketDecoder());
+                        ch.pipeline().addLast(new LoginResponseHandler());
+                        ch.pipeline().addLast(new MessageResponseHandler());
+                        ch.pipeline().addLast(new PacketEncoder());
+                        //测试粘包用的
+//                        ch.pipeline().addLast(new FirstClientHandler());
                     }
                 });
 
@@ -68,8 +71,8 @@ public class NettyClient {
         bootstrap.connect(host, port).addListener(future -> {
             if (future.isSuccess()) {
                 System.out.println(new Date() + ": 连接成功，启动控制台线程……");
-//                Channel channel = ((ChannelFuture) future).channel();
-//                startConsoleThread(channel);
+                Channel channel = ((ChannelFuture) future).channel();
+                startConsoleThread(channel);
             } else if (retry == 0) {
                 System.err.println("重试次数已用完，放弃连接！");
             } else {
@@ -85,26 +88,41 @@ public class NettyClient {
     }
 
     private static void startConsoleThread(Channel channel) {
+
+        Scanner sc = new Scanner(System.in);
+        LoginRequestPacket loginRequestPacket = new LoginRequestPacket();
+
         new Thread(() -> {
             while (!Thread.interrupted()) {
-                if (LoginUtil.hasLogin(channel)) {
-                    System.out.println("循环发送1000条消息至服务端: ");
-                    Scanner sc = new Scanner(System.in);
-                    String line = sc.nextLine();
+                if (!SessionUtils.hasLogin(channel)) {
+                    //还没登录，先登录
+                    System.out.println("输入用户名登录: ");
+                    String userName = sc.nextLine();
+                    loginRequestPacket.setUsername(userName);
 
-                    for(int i = 0; i < 1000; i++){
-                        MessageRequestPacket packet = new MessageRequestPacket();
-                        packet.setMessage(new Date() + "Hinss现在正在发送数据啦...利物浦是冠军");
-                        ByteBuf byteBuf = PacketCodeC.INSTANCE.encode(channel.alloc().ioBuffer(), packet);
-                        channel.writeAndFlush(byteBuf);
-                    }
+                    //密码使用默认的
+                    loginRequestPacket.setPassword("pwd");
 
+                    //发送登录数据包
+                    channel.writeAndFlush(loginRequestPacket);
 
-//                    packet.setMessage(line);
+                    waitForLoginResponse();
 
+                }else{
+                    //如果已经登录了则发送数据
+                    String toUserId = sc.next();
+                    String message = sc.next();
+                    channel.writeAndFlush(new MessageRequestPacket(toUserId,message));
                 }
             }
         }).start();
+    }
+
+    private static void waitForLoginResponse() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ignored) {
+        }
     }
 
 }

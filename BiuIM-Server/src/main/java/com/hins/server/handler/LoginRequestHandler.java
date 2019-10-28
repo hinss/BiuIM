@@ -2,15 +2,18 @@ package com.hins.server.handler;
 
 import com.hins.protocol.request.LoginRequestPacket;
 import com.hins.protocol.response.LoginResponsePacket;
+import com.hins.session.Session;
+import com.hins.utils.SessionUtils;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
 import java.util.Date;
+import java.util.UUID;
 
 /**
- * @Description:
+ * @Description: 处理登录请求的逻辑处理器
  * @Author:Wyman
- * @Date:2019
+ * @Date:2019/10/28
  */
 public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginRequestPacket> {
 
@@ -22,9 +25,19 @@ public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginReques
 
         LoginResponsePacket loginResponsePacket = new LoginResponsePacket();
         loginResponsePacket.setVersion(loginRequestPacket.getVersion());
+        loginResponsePacket.setUserName(loginRequestPacket.getUsername());
+
         if (valid(loginRequestPacket)) {
             loginResponsePacket.setSuccess(true);
-            System.out.println(new Date() + ": 登录成功!");
+            //生成userId
+            String userId = randomUserId();
+            //存到返回packet中
+            loginResponsePacket.setUserId(userId);
+            System.out.println("[" + loginRequestPacket.getUsername()+ "] 登录成功!");
+            //内存中保存userId和session关系
+            SessionUtils.bindSession(new Session(userId,loginRequestPacket.getUsername()),ctx.channel());
+
+
         } else {
             loginResponsePacket.setReason("账号密码校验失败");
             loginResponsePacket.setSuccess(false);
@@ -38,5 +51,25 @@ public class LoginRequestHandler extends SimpleChannelInboundHandler<LoginReques
 
     private boolean valid(LoginRequestPacket loginRequestPacket) {
         return true;
+    }
+
+    /** 使用随机生成的uuid作为userId */
+    private static String randomUserId() {
+        return UUID.randomUUID().toString().split("-")[0];
+    }
+
+    /**
+     * 断开连接的回调，系统中清楚userId和连接的关系内存
+     * @param ctx
+     */
+    @Override
+    public void channelInactive(ChannelHandlerContext ctx) {
+        SessionUtils.unBindSession(ctx.channel());
+    }
+
+
+    public static void main(String[] args) {
+
+        System.out.println(randomUserId());
     }
 }
