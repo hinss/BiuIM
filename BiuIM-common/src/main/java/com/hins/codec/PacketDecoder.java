@@ -8,9 +8,9 @@ import io.netty.handler.codec.ByteToMessageDecoder;
 import java.util.List;
 
 /**
- * @Description:
+ * @Description: 将一个完整的数据包Packet解码(也就是从字节到数据包的过程)
  * @Author:Wyman
- * @Date:2019
+ * @Date:2019/11/12
  */
 public class PacketDecoder extends ByteToMessageDecoder {
 
