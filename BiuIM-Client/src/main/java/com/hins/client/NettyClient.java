@@ -1,5 +1,8 @@
 package com.hins.client;
 
+import com.hins.client.command.ConsoleCommandManager;
+import com.hins.client.command.LoginConsoleCommand;
+import com.hins.client.handler.CreateGroupResponseHandler;
 import com.hins.client.handler.FirstClientHandler;
 import com.hins.client.handler.LoginResponseHandler;
 import com.hins.client.handler.MessageResponseHandler;
@@ -58,6 +61,7 @@ public class NettyClient {
                         ch.pipeline().addLast(new PacketDecoder());
                         ch.pipeline().addLast(new LoginResponseHandler());
                         ch.pipeline().addLast(new MessageResponseHandler());
+                        ch.pipeline().addLast(new CreateGroupResponseHandler());
                         ch.pipeline().addLast(new PacketEncoder());
                         //测试粘包用的
 //                        ch.pipeline().addLast(new FirstClientHandler());
@@ -89,30 +93,22 @@ public class NettyClient {
 
     private static void startConsoleThread(Channel channel) {
 
+        ConsoleCommandManager manager = new ConsoleCommandManager();
+        LoginConsoleCommand loginConsoleCommand = new LoginConsoleCommand();
         Scanner sc = new Scanner(System.in);
-        LoginRequestPacket loginRequestPacket = new LoginRequestPacket();
 
         new Thread(() -> {
             while (!Thread.interrupted()) {
                 if (!SessionUtils.hasLogin(channel)) {
-                    //还没登录，先登录
-                    System.out.println("输入用户名登录: ");
-                    String userName = sc.nextLine();
-                    loginRequestPacket.setUsername(userName);
 
-                    //密码使用默认的
-                    loginRequestPacket.setPassword("pwd");
-
-                    //发送登录数据包
-                    channel.writeAndFlush(loginRequestPacket);
-
-                    waitForLoginResponse();
+                    loginConsoleCommand.exec(sc,channel);
 
                 }else{
-                    //如果已经登录了则发送数据
-                    String toUserId = sc.next();
-                    String message = sc.next();
-                    channel.writeAndFlush(new MessageRequestPacket(toUserId,message));
+//                    //如果已经登录了则发送数据
+//                    String toUserId = sc.next();
+//                    String message = sc.next();
+//                    channel.writeAndFlush(new MessageRequestPacket(toUserId,message));
+                    manager.exec(sc, channel);
                 }
             }
         }).start();

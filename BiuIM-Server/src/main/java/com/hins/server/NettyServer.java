@@ -3,10 +3,7 @@ package com.hins.server;
 import com.hins.codec.PacketDecoder;
 import com.hins.codec.PacketEncoder;
 import com.hins.codec.Spliter;
-import com.hins.server.handler.AuthHandler;
-import com.hins.server.handler.FirstServerHandler;
-import com.hins.server.handler.LoginRequestHandler;
-import com.hins.server.handler.MessageRequestHandler;
+import com.hins.server.handler.*;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -55,6 +52,7 @@ public class NettyServer {
                      ch.pipeline().addLast(new LoginRequestHandler());
                      ch.pipeline().addLast(new AuthHandler());
                      ch.pipeline().addLast(new MessageRequestHandler());
+                     ch.pipeline().addLast(new CreatGroupRequestHandler());
                      ch.pipeline().addLast(new PacketEncoder());
                      //模拟粘包的handler
 //                   ch.pipeline().addLast(new FirstServerHandler());

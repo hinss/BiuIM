@@ -1,8 +1,12 @@
 package com.hins.protocol;
 
+import com.hins.protocol.request.CreateGroupRequestPacket;
 import com.hins.protocol.request.LoginRequestPacket;
+import com.hins.protocol.request.LogoutRequestPacket;
 import com.hins.protocol.request.MessageRequestPacket;
+import com.hins.protocol.response.CreateGroupResponsePacket;
 import com.hins.protocol.response.LoginResponsePacket;
+import com.hins.protocol.response.LogoutResponsePacket;
 import com.hins.protocol.response.MessageResponsePacket;
 import com.hins.serialize.Serializer;
 import com.hins.serialize.impl.JSONSerializer;
@@ -39,6 +43,10 @@ public class PacketCodeC {
         packetTypeMap.put(LOGIN_RESPONSE, LoginResponsePacket.class);
         packetTypeMap.put(MESSAGE_REQUEST, MessageRequestPacket.class);
         packetTypeMap.put(MESSAGE_RESPONSE, MessageResponsePacket.class);
+        packetTypeMap.put(CREATE_GROUP_REQUEST, CreateGroupRequestPacket.class);
+        packetTypeMap.put(CREATE_GROUP_RESPONSE, CreateGroupResponsePacket.class);
+        packetTypeMap.put(LOGIN_OUT_REQUEST, LogoutRequestPacket.class);
+        packetTypeMap.put(LOGIN_OUT_RESPONSE, LogoutResponsePacket.class);
 
         serializerMap = new HashMap<>();
         Serializer serializer = new JSONSerializer();

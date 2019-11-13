@@ -16,4 +16,16 @@ public interface Command {
 
     //消息回复
     Byte MESSAGE_RESPONSE = 4;
+
+    //创建群组请求
+    Byte CREATE_GROUP_REQUEST = 5;
+
+    //创建群组回应
+    Byte CREATE_GROUP_RESPONSE = 6;
+
+    //登出请求
+    Byte LOGIN_OUT_REQUEST = 7;
+
+    //登出回应
+    Byte LOGIN_OUT_RESPONSE = 8;
 }
