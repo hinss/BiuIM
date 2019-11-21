@@ -57,14 +57,14 @@ public class NettyClient {
                 .handler(new ChannelInitializer<SocketChannel>() {
                     @Override
                     public void initChannel(SocketChannel ch) {
-                        ch.pipeline().addLast(new Spliter());
-                        ch.pipeline().addLast(new PacketDecoder());
-                        ch.pipeline().addLast(new LoginResponseHandler());
-                        ch.pipeline().addLast(new MessageResponseHandler());
-                        ch.pipeline().addLast(new CreateGroupResponseHandler());
-                        ch.pipeline().addLast(new PacketEncoder());
+//                        ch.pipeline().addLast(new Spliter());
+//                        ch.pipeline().addLast(new PacketDecoder());
+//                        ch.pipeline().addLast(new LoginResponseHandler());
+//                        ch.pipeline().addLast(new MessageResponseHandler());
+//                        ch.pipeline().addLast(new CreateGroupResponseHandler());
+//                        ch.pipeline().addLast(new PacketEncoder());
                         //测试粘包用的
-//                        ch.pipeline().addLast(new FirstClientHandler());
+                        ch.pipeline().addLast(new FirstClientHandler());
                     }
                 });
 
@@ -75,8 +75,8 @@ public class NettyClient {
         bootstrap.connect(host, port).addListener(future -> {
             if (future.isSuccess()) {
                 System.out.println(new Date() + ": 连接成功，启动控制台线程……");
-                Channel channel = ((ChannelFuture) future).channel();
-                startConsoleThread(channel);
+//                Channel channel = ((ChannelFuture) future).channel();
+//                startConsoleThread(channel);
             } else if (retry == 0) {
                 System.err.println("重试次数已用完，放弃连接！");
             } else {

@@ -16,12 +16,12 @@ public class FirstClientHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
 
-        for(int i = 0; i < 1000; i++){
+//        for(int i = 0; i < 1000; i++){
 
             ByteBuf byteBuf = getByteBuf(ctx);
 
             ctx.writeAndFlush(byteBuf);
-        }
+//        }
 
     }
 
