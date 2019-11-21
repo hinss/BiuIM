@@ -28,6 +28,7 @@
     <netty.version>4.1.36.Final</netty.version>
     <fastjson.version>1.2.47</fastjson.version>
     <lombok.version>1.16.12</lombok.version>
+    <zk.version>0.1</zk.version>
   </properties>
 
  <dependencyManagement>
@@ -52,6 +53,13 @@
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>${lombok.version}</version>
+    </dependency>
+
+    <!-- zkClient -->
+    <dependency>
+      <groupId>com.github.sgroschupf</groupId>
+      <artifactId>zkclient</artifactId>
+      <version>${zk.version}</version>
     </dependency>
 
   </dependencies>
