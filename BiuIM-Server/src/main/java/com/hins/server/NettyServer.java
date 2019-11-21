@@ -10,6 +10,8 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.http.HttpObjectAggregator;
+import io.netty.handler.codec.http.HttpServerCodec;
 
 /**
  * @Description: 基于Netty实现的服务端
@@ -46,14 +48,19 @@ public class NettyServer {
 
                     @Override
                     protected void initChannel(NioSocketChannel ch) throws Exception {
+                     //增加HTTP协议以及websocket协议处理
+                     ch.pipeline().addLast(new HttpServerCodec());
+                     ch.pipeline().addLast(new HttpObjectAggregator(65536));
+                     ch.pipeline().addLast(new WebSocketServerHandler());
+                     ch.pipeline().addLast(new NewConnectHandler());
                      //具体处理每条连接的逻辑
-                     ch.pipeline().addLast(new Spliter());
-                     ch.pipeline().addLast(new PacketDecoder());
-                     ch.pipeline().addLast(new LoginRequestHandler());
-                     ch.pipeline().addLast(new AuthHandler());
-                     ch.pipeline().addLast(new MessageRequestHandler());
-                     ch.pipeline().addLast(new CreatGroupRequestHandler());
-                     ch.pipeline().addLast(new PacketEncoder());
+//                     ch.pipeline().addLast(new Spliter());
+//                     ch.pipeline().addLast(new PacketDecoder());
+//                     ch.pipeline().addLast(new LoginRequestHandler());
+//                     ch.pipeline().addLast(new AuthHandler());
+//                     ch.pipeline().addLast(new MessageRequestHandler());
+//                     ch.pipeline().addLast(new CreatGroupRequestHandler());
+//                     ch.pipeline().addLast(new PacketEncoder());
                      //模拟粘包的handler
 //                   ch.pipeline().addLast(new FirstServerHandler());
 
