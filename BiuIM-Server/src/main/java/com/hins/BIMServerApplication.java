@@ -32,6 +32,7 @@ public class BIMServerApplication implements CommandLineRunner {
     {
         SpringApplication.run(BIMServerApplication.class);
         LOGGER.info("===启动 Server 成功===");
+
     }
 
     @Override
@@ -45,6 +46,9 @@ public class BIMServerApplication implements CommandLineRunner {
         Thread thread = new Thread(new ZKRegistry(addr,appConfiguration.getBiuImServerPort(),serverPort));
         thread.setName("zkRegistry");
         thread.start();
+
+        LOGGER.info("===输出静态变量:" + AppConfiguration.getStaticTest() + "===");
+
 
     }
 }

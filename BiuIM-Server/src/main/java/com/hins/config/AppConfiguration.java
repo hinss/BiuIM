@@ -30,6 +30,18 @@ public class AppConfiguration {
     @Value("${app.zk.connect.timeout}")
     private int zkConnectTimout;
 
+    /**
+     * 测试静态属性通过非静态的方法注入属性
+     */
+    private static int STATIC_TEST;
+
+    @Value("${app.zk.test.static}")
+    public void setStaticTest(int staticTest){
+        STATIC_TEST = staticTest;
+    }
 
 
+    public static int getStaticTest() {
+        return STATIC_TEST;
+    }
 }
