@@ -107,6 +107,15 @@ public class ZKConfigWatcher implements Watcher {
 
     public static void main(String[] args) {
 
+        /**
+         * 示例用法:
+         * 1)命令行启动zookeeper 服务器
+         * 2)再命令行启动一个zookeeper 客户端
+         * 3)跑起来main方法,主线程阻塞了50s，再这50s内，利用命令行客户端对 /config1 下的 "port:xxxx"修改其xxxx
+         * 端口值，该main跑起来的客户端都会监听到变更，打印新的变更端口号
+         */
+
+
         ZKConfigWatcher zkConfigWatcher = new ZKConfigWatcher();
         zkConfigWatcher.createConnection("localhost:2181",20000);
 
