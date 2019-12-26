@@ -29,6 +29,8 @@
     <fastjson.version>1.2.47</fastjson.version>
     <lombok.version>1.16.12</lombok.version>
     <zk.version>0.1</zk.version>
+    <zk2.version>0.11</zk2.version>
+    <zkServer.version>3.4.13</zkServer.version>
   </properties>
 
  <dependencyManagement>
@@ -60,6 +62,19 @@
       <groupId>com.github.sgroschupf</groupId>
       <artifactId>zkclient</artifactId>
       <version>${zk.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.101tec</groupId>
+      <artifactId>zkclient</artifactId>
+      <version>${zk2.version}</version>
+    </dependency>
+
+    <!-- zkServer -->
+    <dependency>
+      <groupId>org.apache.zookeeper</groupId>
+      <artifactId>zookeeper</artifactId>
+      <version>${zkServer.version}</version>
     </dependency>
 
   </dependencies>
