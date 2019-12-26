@@ -30,7 +30,7 @@
     <lombok.version>1.16.12</lombok.version>
     <zk.version>0.1</zk.version>
     <zk2.version>0.11</zk2.version>
-    <zkServer.version>3.4.13</zkServer.version>
+    <zkServer.version>3.4.14</zkServer.version>
   </properties>
 
  <dependencyManagement>
